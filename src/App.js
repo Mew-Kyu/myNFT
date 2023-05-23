@@ -5,24 +5,30 @@ import { Button } from './components/Button';
 import plusIcon from "assets/plus.svg"
 import styled from "styled-components";
 
-const StyledCardCon = styled.div`
+const CoverCard = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
+`;
+
+const StyledCardCon = styled.div`
+  display: flex;
   width: 500px;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 20px;
 `;
 
 function App() {
   return (
     <div className="App">
-      <StyledCardCon>
-        <Card title={"Revenue"} amount="5.00" percent={12.3}></Card>
-        <Card title={"Spending"} amount="2.00" percent={8.1}></Card>
-        <Card title={"ROI"} content={"+14.02"} percent={-5.1}></Card>
-        <Card title={"Estimated"} amount="7.00" percent={3.2}></Card>
-      </StyledCardCon>
+      <CoverCard>
+        <StyledCardCon>
+          <Card title={"Revenue"} amount="5.00" percent={12.3}></Card>
+          <Card title={"Spending"} amount="2.00" percent={8.1}></Card>
+          <Card title={"ROI"} content={"+14.02"} percent={-5.1}></Card>
+          <Card title={"Estimated"} amount="7.00" percent={3.2}></Card>
+        </StyledCardCon>
+      </CoverCard>
       {/* <Button percent={10} onClick={()=>console.log("Clickkkk")}><span>Click</span>Me</Button>
       <Button textColor="white" bgColor="transparent" borderColor="white">0%</Button>
       <Button width={77} height={32} textColor="white" bgColor="#5429FF">Following</Button>

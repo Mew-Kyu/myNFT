@@ -27,6 +27,7 @@ const StyledCard = styled.div`
     margin-bottom: 12px;
   }
   .amount {
+    font-weight: 700;
     font-size: 24px;
     line-height: 31px;
     color: #27262e;
@@ -38,6 +39,7 @@ const StyledCard = styled.div`
     margin-right: 4px;
   }
   .roi {
+    font-weight: 700;
     font-size: 24px;
     line-height: 31px;
     color: #27262e;
