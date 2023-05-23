@@ -9,6 +9,8 @@ const StyledCardCon = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
+  width: 500px;
+  flex-wrap: wrap;
   gap: 50px;
 `;
 
