@@ -11,6 +11,9 @@ const StyledCard = styled.div`
   width: 164px;
   height: 167px;
   color: #747475;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   .info-card {
     width: 100%;
     text-align: center;
