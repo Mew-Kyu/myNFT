@@ -1,38 +1,19 @@
 // import logo from './logo.svg';
-import { Card } from 'components/Card';
+import Home from 'containers/Home';
 import './App.css';
-// import { Button } from './components/Button';
-// import plusIcon from "assets/plus.svg"
-import styled from "styled-components";
-
-const CoverCard = styled.div`
-  display: flex;
-  justify-content: flex-end;
-`;
-
-const StyledCardCon = styled.div`
-  display: flex;
-  width: 450px;
-  flex-wrap: wrap;
-  gap: 20px;
-`;
+import { Routes, Route } from 'react-router-dom';
+import NotFound from 'containers/404';
+import Login from 'containers/Login';
+import About from 'containers/About';
 
 function App() {
   return (
-    <div className="App">
-      <CoverCard>
-        <StyledCardCon>
-          <Card title={"Revenue"} amount="5.00" percent={12.3}></Card>
-          <Card title={"Spending"} amount="2.00" percent={8.1}></Card>
-          <Card title={"ROI"} content={"+14.02"} percent={-5.1}></Card>
-          <Card title={"Estimated"} amount="7.00" percent={3.2}></Card>
-        </StyledCardCon>
-      </CoverCard>
-      {/* <Button percent={10} onClick={()=>console.log("Clickkkk")}><span>Click</span>Me</Button>
-      <Button textColor="white" bgColor="transparent" borderColor="white">0%</Button>
-      <Button width={77} height={32} textColor="white" bgColor="#5429FF">Following</Button>
-      <Button width={77} height={32} textColor="#5429FF" bgColor="rgba(84, 41, 255, 0.1)">Follow</Button> */}
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />}/>
+      <Route path="/sign-in" element={<Login />}/>
+      <Route path="/about" element={<About />}/>
+      <Route path="*" element={<NotFound />}/>
+    </Routes>
   );
 }
 
