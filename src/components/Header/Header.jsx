@@ -7,13 +7,14 @@ const HeaderStyled = styled.div`
   width: 100%;
   box-sizing: border-box;
   height: 64px;
-  padding: 12px 32px;
+  padding-left: 32px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #caeae6;
 `;
 const SearchForm = styled.div`
-  width: 50%;
+  width: 30%;
   height: 39px;
   border-radius: 35px;
   background: #ffffff;
