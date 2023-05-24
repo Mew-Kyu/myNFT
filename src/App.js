@@ -1,19 +1,18 @@
 // import logo from './logo.svg';
 import { Card } from 'components/Card';
 import './App.css';
-import { Button } from './components/Button';
-import plusIcon from "assets/plus.svg"
+// import { Button } from './components/Button';
+// import plusIcon from "assets/plus.svg"
 import styled from "styled-components";
 
 const CoverCard = styled.div`
   display: flex;
-  align-items: flex-start;
   justify-content: flex-end;
 `;
 
 const StyledCardCon = styled.div`
   display: flex;
-  width: 500px;
+  width: 450px;
   flex-wrap: wrap;
   gap: 20px;
 `;
