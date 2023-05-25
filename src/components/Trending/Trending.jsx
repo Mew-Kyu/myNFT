@@ -11,6 +11,25 @@ const Title = styled.div`
   }
   .title-list {
     display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .art {
+    background: rgba(84, 41, 255, 0.1);
+    width: 45px;
+    height: 28px;
+    color: #5429ff;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    border-radius: 30px;
+  }
+  .other {
+    font-size: 14px;
+    color: #7a797d;
+    font-weight: 500;
   }
 `;
 const TrendCart = styled.div`
@@ -26,10 +45,10 @@ const Trending = () => {
       <Title>
         <p>Trending Auctions</p>
         <div className="title-list">
-          <div>Art</div>
-          <div>Music</div>
-          <div>Collectibles</div>
-          <div>Utility</div>
+          <div className="art">Art</div>
+          <div className="other">Music</div>
+          <div className="other">Collectibles</div>
+          <div className="other">Utility</div>
         </div>
       </Title>
     </>
