@@ -14,11 +14,13 @@ const LayoutStyled = styled.div`
 const ContentStyled = styled.div`
   background-color: #caeae6;
   margin-top: 64px;
+  padding-top: 40px;
   height: 100vh;
 `;
 const SideBarStyled = styled.div`
   float: left;
   width: 20%;
+  position: fixed;
 `;
 
 const PrimaryLayout = ({ children }) => {

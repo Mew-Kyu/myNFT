@@ -13,6 +13,8 @@ import mode from "assets/mode.svg";
 import plus from "assets/plus.svg";
 import eth from "assets/Ethereum (ETH).svg";
 import arrow from "assets/right-arrow.svg";
+import ethbg from "assets/bg eth.svg";
+import { Toggle } from "components/Toggle";
 
 const StyledSideBar = styled.div`
   background-color: white;
@@ -58,6 +60,10 @@ const Balance = styled.div`
   justify-content: space-evenly;
   align-items: center;
   color: #fff;
+  .eth {
+    position: absolute;
+    padding-right: 6%;
+  }
   .title-balance {
     font-weight: 500;
     font-size: 12px;
@@ -95,11 +101,12 @@ const TopUp = styled.button`
     font-size: 14px;
   }
 `;
-const NavItem = ({ text, path, img }) => {
+const NavItem = ({ text, path, img, children }) => {
   return (
     <StyledNavItem>
       <img src={img} alt="nav-icon"></img>
       <NavLink to={path}>{text}</NavLink>
+      {children}
     </StyledNavItem>
   );
 };
@@ -118,9 +125,12 @@ export const Sidebar = () => {
         <NavItem img={history} text="History" path="/"></NavItem>
         <NavItem img={setting} text="Settings" path="/"></NavItem>
         <TitleGroup>other</TitleGroup>
-        <NavItem img={mode} text="Light Mode" path="/"></NavItem>
+        <NavItem img={mode} text="Light Mode" path="/">
+          <Toggle />
+        </NavItem>
       </AllNav>
       <Balance>
+        <img className="eth" src={ethbg} alt="ETH background" />
         <p className="title-balance">Your Balance</p>
         <p className="amount-balance">1,034.02</p>
         <Icon>

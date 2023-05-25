@@ -8,7 +8,7 @@ const HeaderStyled = styled.div`
   z-index: 99;
   width: 80%;
   box-sizing: border-box;
-  height: 64px;
+  height: 80px;
   padding-left: 32px;
   display: flex;
   justify-content: space-between;
