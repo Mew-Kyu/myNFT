@@ -35,7 +35,7 @@ const ToggleSwitch = styled.label`
     width: 22px;
     border-radius: 50%;
     background-color: #ffeccf;
-    box-shadow: inset 0px 0px 0px 0.75em #ffbb52;
+    box-shadow: inset 0px 0px 0px 0.75em #AE9AFF;;
     transition: background-color 250ms, border-color 250ms,
       transform 500ms cubic-bezier(0.26, 2, 0.46, 0.71);
   }
@@ -50,7 +50,7 @@ const ToggleSwitch = styled.label`
     position: absolute;
     height: 22px;
     width: 22px;
-    color: #ffbb52;
+    color: #5429FF;;
   }
 
   .sun-icon-wrapper {

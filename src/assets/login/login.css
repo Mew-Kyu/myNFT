@@ -1,0 +1,204 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.rectangle {
+    width: 212px;
+    height: 47px;
+    background: #D9D9D9;
+}
+
+.bg-login {
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    border-radius: 20px;
+
+}
+
+.bg-right {
+    border-radius: 20px;
+    background-color: lightblue;
+    width: 30%;
+    height: 100%;
+    float: right;
+}
+
+.content {
+    height: 70%;
+    width: 70%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 5%;
+}
+
+.form-login {
+    width: 60%;
+}
+
+.images {
+    margin-top: 20%;
+}
+
+.girl {
+    width: 70%;
+}
+
+.tree {
+    width: 25%;
+}
+
+.title-login {
+    font-weight: 600;
+    font-size: 56px;
+    margin-top: 2%;
+}
+
+.label-input {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.label-pass {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forgot {
+    font-weight: 300;
+    font-size: 14px;
+    color: #000;
+    opacity: 0.5;
+    text-decoration: none;
+}
+
+.input-username {
+    height: 46px;
+    width: 100%;
+    background: #C0DBEA;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+.input-username:focus {
+    outline: none;
+}
+
+.input-password {
+    height: 46px;
+    width: 100%;
+    background: #C0DBEA;
+    border-radius: 4px;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.input-password img {
+    cursor: pointer;
+}
+
+.pass {
+    font-size: 14px;
+    background: #C0DBEA;
+    width: 90%;
+    border: none;
+}
+
+.pass:focus {
+    outline: none;
+}
+
+.log-button {
+    width: 150px;
+    height: 46px;
+    background: #D885A3;
+    border-radius: 23px;
+    border: none;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+
+.log-button p {
+    font-weight: 600;
+    font-size: 16px;
+    color: #FFF;
+}
+
+.continue {
+    font-weight: 400;
+    font-size: 14px;
+    color: #6096B4;
+}
+
+.logwith button {
+    width: 30%;
+    height: 50px;
+    border: 1px solid #6096B4;
+    border-radius: 40px;
+    background-color: #FFF;
+    cursor: pointer;
+}
+
+.reg-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2%;
+}
+
+.reg-label {
+    font-weight: 400;
+    font-size: 14px;
+    opacity: 0.5;
+    padding-right: 2%;
+}
+
+.reg {
+    font-weight: 400;
+    font-size: 14px;
+    color: #D885A3;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .content {
+        width: 100%;
+    }
+    .bg-right {
+        display: none;
+    }
+    .rectangle {
+        display: none;
+    }
+    .title-login {
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+    .label-input {
+        font-size: 15px;
+    }
+    .forgot {
+        font-size: 13px;
+    }
+    .images {
+        display: none;
+    }
+}

@@ -133,6 +133,7 @@ const Top = styled.div`
     color: #27262e;
   }
   .all {
+    cursor: pointer;
     color: #747475;
     font-weight: 500;
     font-size: 16px;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import search from "assets/search.svg";
 import noti from "assets/noti.svg";
 import avatar from "assets/avatar.svg";
+import { Link } from "react-router-dom";
 
 const HeaderStyled = styled.div`
   position: fixed;
@@ -61,8 +62,6 @@ const RightHeader = styled.div`
     cursor: pointer;
   }
   img {
-    width: 56px;
-    height: 56px;
     border-radius: 50%;
     cursor: pointer;
   }
@@ -82,7 +81,9 @@ const Header = () => {
         <div>
           <img src={noti} alt="Notification icon" />
         </div>
-        <img src={avatar} alt="Avatar" />
+        <Link to="/login">
+          <img src={avatar} alt="Avatar" />
+        </Link>
       </RightHeader>
     </HeaderStyled>
   );
