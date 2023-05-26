@@ -88,6 +88,7 @@ const Icon = styled.button`
   align-items: center;
 `;
 const TopUp = styled.button`
+  cursor: pointer;
   width: 90%;
   padding: 14px 16px;
   display: flex;

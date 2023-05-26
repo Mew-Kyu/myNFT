@@ -9,7 +9,6 @@ import { Button } from "components/Button";
 
 const fakeData = [
   {
-    num: "1.",
     pic: top1,
     name: "Michael Jordan",
     ninkname: "@jordan_",
@@ -27,7 +26,6 @@ const fakeData = [
     ),
   },
   {
-    num: "2.",
     pic: top2,
     name: "John Tibao",
     ninkname: "@johnti60",
@@ -45,7 +43,6 @@ const fakeData = [
     ),
   },
   {
-    num: "3.",
     pic: top3,
     name: "Teressa",
     ninkname: "@teressa",
@@ -63,7 +60,6 @@ const fakeData = [
     ),
   },
   {
-    num: "4.",
     pic: top4,
     name: "Johan Hawn",
     ninkname: "@j_hawn",
@@ -81,7 +77,6 @@ const fakeData = [
     ),
   },
   {
-    num: "5.",
     pic: top5,
     name: "Maria Alisson",
     ninkname: "@m_alisson",
@@ -99,7 +94,6 @@ const fakeData = [
     ),
   },
   {
-    num: "6.",
     pic: top6,
     name: "Sam Erricson",
     ninkname: "@erricsonsam",
@@ -181,9 +175,9 @@ const Creator = () => {
         <p className="top">Top Creator</p>
         <p className="all">See All</p>
       </div>
-      {fakeData.map((item) => (
+      {fakeData.map((item, index) => (
         <TopCre>
-          <span>{item.num}</span>
+          <span>{index + 1}.</span>
           <img src={item.pic} alt="Avatar" />
           <div>
             <p className="name">{item.name}</p>

@@ -58,11 +58,13 @@ const RightHeader = styled.div`
   div img {
     width: 24px;
     height: 24px;
+    cursor: pointer;
   }
   img {
     width: 56px;
     height: 56px;
     border-radius: 50%;
+    cursor: pointer;
   }
 `;
 

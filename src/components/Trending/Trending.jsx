@@ -1,3 +1,4 @@
+import { CardNFT } from "components/CardNFT";
 import { styled } from "styled-components";
 
 const Title = styled.div`
@@ -32,11 +33,12 @@ const Title = styled.div`
     font-weight: 500;
   }
 `;
-const TrendCart = styled.div`
-  width: 348px;
-  height: 364px;
-  background: #ffffff;
-  border-radius: 16px;
+
+const AllTrend = styled.div`
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
 `;
 
 const Trending = () => {
@@ -51,6 +53,9 @@ const Trending = () => {
           <div className="other">Utility</div>
         </div>
       </Title>
+      <AllTrend>
+        <CardNFT />
+      </AllTrend>
     </>
   );
 };

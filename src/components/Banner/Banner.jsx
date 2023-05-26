@@ -35,6 +35,7 @@ const Banner = () => {
           textColor="#5429FF;"
           bgColor="#FFF"
           fontSize={16}
+          fontWeight={700}
         >
           Discover
         </Button>
@@ -45,6 +46,8 @@ const Banner = () => {
           height={46}
           textColor="white"
           bgColor="none"
+          fontSize={16}
+          fontWeight={700}
         >
           Create
         </Button>

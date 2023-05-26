@@ -9,13 +9,14 @@ const StyledButton = styled.button`
     props.borderColor ? `1px solid ${props.borderColor}` : "none"};
   border-radius: ${(props) => `${props.radius}px`};
   background: ${(props) => props.bgColor};
-  font-weight: 500;
+  font-weight: ${(props) => props.fontWeight};
   font-size: ${(props) => `${props.fontSize}px`};
   line-height: 21px;
   color: ${(props) => props.textColor};
   img {
     margin-right: 8px;
   }
+  cursor: pointer;
 `;
 
 export const Button = ({
@@ -27,6 +28,7 @@ export const Button = ({
   borderColor,
   percent,
   fontSize,
+  fontWeight,
   children,
   ...rest
 }) => {
@@ -40,6 +42,7 @@ export const Button = ({
       radius={radius}
       borderColor={borderColor}
       fontSize={fontSize}
+      fontWeight={fontWeight}
       {...rest}
     >
       {percent && (
