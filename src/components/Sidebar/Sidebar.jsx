@@ -1,14 +1,14 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import logo from "assets/Logo.svg";
-import dashboard from "assets/dashboard.svg";
-import market from "assets/shop.svg";
-import bid from "assets/bids.svg";
-import portfolio from "assets/portfolio.svg";
-import wallet from "assets/wallet.svg";
-import favourite from "assets/favoutites.svg";
-import history from "assets/history.svg";
-import setting from "assets/settings.svg";
+import { ReactComponent as Dashboard } from "assets/dashboard.svg";
+import { ReactComponent as Market } from "assets/shop.svg";
+import { ReactComponent as Bid } from "assets/bids.svg";
+import { ReactComponent as Portfolio } from "assets/portfolio.svg";
+import { ReactComponent as Wallet } from "assets/wallet.svg";
+import { ReactComponent as Favourite } from "assets/favoutites.svg";
+import { ReactComponent as History } from "assets/history.svg";
+import { ReactComponent as Setting } from "assets/settings.svg";
 import mode from "assets/mode.svg";
 import plus from "assets/plus.svg";
 import eth from "assets/Ethereum (ETH).svg";
@@ -17,38 +17,58 @@ import ethbg from "assets/bg eth.svg";
 import { Toggle } from "components/Toggle";
 
 const StyledSideBar = styled.div`
-  background-color: white;
-  height: 100vh;
-  padding: 32px;
   .logo {
     max-width: 100%;
   }
+  background-color: white;
+  height: 100vh;
+  padding: 32px;
+  .sidebar-menu {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 25px auto;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #27262e;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: unset;
+    color: #7a797d;
+    gap: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    margin-bottom: 24px;
+  }
+  .active {
+    svg {
+      path {
+        stroke: #5429ff;
+      }
+    }
+    color: #5429ff;
+    font-weight: 700;
+  }
+  .item-text {
+    margin-left: 12px;
+  }
 `;
-const AllNav = styled.div`
-  margin-top: 32px;
-`;
-const StyledNavItem = styled.div`
+const StyledMode = styled.div`
   display: flex;
   align-items: center;
+  text-decoration: unset;
+  color: #7a797d;
   gap: 16px;
   font-size: 16px;
   font-weight: 500;
   line-height: 21px;
-  color: #7a797d;
-  margin-bottom: 25px;
-  a {
-    text-decoration: unset;
-    color: #7a797d;
-  }
+  margin-bottom: 24px;
 `;
-const TitleGroup = styled.p`
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 16px;
-  margin: 25px auto;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: #27262e;
+const AllNav = styled.div`
+  margin-top: 32px;
 `;
 const Balance = styled.div`
   max-width: 228px;
@@ -102,33 +122,53 @@ const TopUp = styled.button`
     font-size: 14px;
   }
 `;
-const NavItem = ({ text, path, img, children }) => {
-  return (
-    <StyledNavItem>
-      <img src={img} alt="nav-icon"></img>
-      <NavLink to={path}>{text}</NavLink>
-      {children}
-    </StyledNavItem>
-  );
-};
+
 export const Sidebar = () => {
   return (
     <StyledSideBar>
       <img className="logo" src={logo} alt="logo" />
       <AllNav>
-        <NavItem img={dashboard} text="Dashboard" path="/"></NavItem>
-        <NavItem img={market} text="Market" path="/"></NavItem>
-        <NavItem img={bid} text="Active Bids" path="/"></NavItem>
-        <TitleGroup>profile</TitleGroup>
-        <NavItem img={portfolio} text="My Portfolio" path="/"></NavItem>
-        <NavItem img={wallet} text="Wallet" path="/"></NavItem>
-        <NavItem img={favourite} text="Favourites" path="/"></NavItem>
-        <NavItem img={history} text="History" path="/"></NavItem>
-        <NavItem img={setting} text="Settings" path="/"></NavItem>
-        <TitleGroup>other</TitleGroup>
-        <NavItem img={mode} text="Light Mode" path="/">
-          <Toggle />
-        </NavItem>
+        <div className="nav">
+          <NavLink to="/">
+            <Dashboard />
+            <span className="item-text">Dashboard</span>
+          </NavLink>
+          <NavLink to="/x">
+            <Market />
+            <span className="item-text">Market</span>
+          </NavLink>
+          <NavLink to="/x">
+            <Bid />
+            <span className="item-text">Active Bids</span>
+          </NavLink>
+          <div className="sidebar-menu">PROFILE</div>
+          <NavLink to="/x">
+            <Portfolio />
+            <span className="item-text">My Portfolio</span>
+          </NavLink>
+          <NavLink to="/x">
+            <Wallet />
+            <span className="item-text">Wallet</span>
+          </NavLink>
+          <NavLink to="/x">
+            <Favourite />
+            <span className="item-text">Favourite</span>
+          </NavLink>
+          <NavLink to="/x">
+            <History />
+            <span className="item-text">History</span>
+          </NavLink>
+          <NavLink to="/x">
+            <Setting />
+            <span className="item-text">Setting</span>
+          </NavLink>
+          <div className="sidebar-menu">Other</div>
+          <StyledMode>
+            <img src={mode} alt="Dark/Light mode" />
+            <span className="item-text">Light Mode</span>
+            <Toggle />
+          </StyledMode>
+        </div>
       </AllNav>
       <Balance>
         <img className="eth" src={ethbg} alt="ETH background" />
