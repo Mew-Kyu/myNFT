@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Card } from "components/Card";
 import { PrimaryLayout } from "components/Layout";
-import Banner from "components/Banner/Banner";
+import Banner from "components/Banner";
 import { Creator } from "components/Creator";
 import { Trending } from "components/Trending";
 
