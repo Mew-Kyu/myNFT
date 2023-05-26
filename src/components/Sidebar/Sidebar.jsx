@@ -117,7 +117,7 @@ export const Sidebar = () => {
       <img className="logo" src={logo} alt="logo" />
       <AllNav>
         <NavItem img={dashboard} text="Dashboard" path="/"></NavItem>
-        <NavItem img={market} text="Market" path="/about"></NavItem>
+        <NavItem img={market} text="Market" path="/"></NavItem>
         <NavItem img={bid} text="Active Bids" path="/"></NavItem>
         <TitleGroup>profile</TitleGroup>
         <NavItem img={portfolio} text="My Portfolio" path="/"></NavItem>
