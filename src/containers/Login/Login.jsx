@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
-import cactus from "assets/login/cactus.svg";
-import girl from "assets/login/Character-working-laptop-sitting-chair.svg";
-import eye from "assets/login/clarity_eye-hide-line.svg";
+import astronaut from "assets/login/astronaut.svg";
+import eye from "assets/login/clarity_eye.svg";
 import fb from "assets/login/Facebook.svg";
 import github from "assets/login/Github.svg";
 import google from "assets/login/Google.svg";
@@ -18,33 +17,27 @@ const StyledLogin = styled.div`
   );
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   overflow: hidden;
+  .pic-bg {
+    margin-top: 2%;
+    height: 98%;
+  }
   .logo {
-    padding-left: 30px;
+    margin-left: 30px;
     width: 166px;
     height: 56px;
   }
   .bg-login {
-    width: 50%;
-    height: 70%;
-    background-color: white;
+    width: 30%;
+    height: 60%;
     border-radius: 20px;
     display: flex;
     align-items: center;
   }
   .form-login {
     width: 100%;
-  }
-  .images {
-    margin-top: 20%;
-  }
-  .girl {
-    width: 70%;
-  }
-  .tree {
-    width: 25%;
   }
   .title-login {
     font-weight: 600;
@@ -61,10 +54,15 @@ const StyledLogin = styled.div`
     align-items: center;
   }
   .forgot {
+    cursor: pointer;
     font-weight: 300;
     font-size: 14px;
     color: #5429ff;
     opacity: 0.5;
+    transition: 0.3s;
+  }
+  .forgot:hover {
+    opacity: 1;
   }
   .input-username {
     height: 46px;
@@ -102,6 +100,7 @@ const StyledLogin = styled.div`
     outline: none;
   }
   .log-button {
+    cursor: pointer;
     width: 150px;
     height: 46px;
     background: #5429ff;
@@ -111,7 +110,10 @@ const StyledLogin = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    cursor: pointer;
+    transition: 0.3s;
+  }
+  .log-button:hover {
+    opacity: 0.8;
   }
   .log-button p {
     font-weight: 600;
@@ -123,13 +125,21 @@ const StyledLogin = styled.div`
     font-size: 14px;
     color: #5429ff;
   }
+  .logwith {
+    display: flex;
+    justify-content: space-evenly;
+  }
   .logwith button {
+    cursor: pointer;
     width: 30%;
     height: 50px;
     border: 1px solid #5429ff;
     border-radius: 40px;
     background-color: #fff;
-    cursor: pointer;
+    transition: 0.3s;
+  }
+  .logwith button:hover {
+    opacity: 0.6;
   }
   .reg-form {
     display: flex;
@@ -144,22 +154,32 @@ const StyledLogin = styled.div`
     padding-right: 2%;
   }
   .reg {
+    cursor: pointer;
     font-weight: 400;
     font-size: 14px;
     color: #5429ff;
+    transition: 0.3s;
+  }
+  .reg:hover {
+    opacity: 0.6;
   }
 
   @media (max-width: 768px) {
-    .content {
-      width: 100%;
-    }
-    .bg-right {
+    .pic-bg {
       display: none;
+    }
+    .bg-login {
+      width: 70%;
+      background-color: white;
+      padding: 10%;
     }
     .logo {
-      display: none;
+      margin: 0;
+      width: 100%;
+      align-items: center;
     }
     .title-login {
+      align-items: center;
       font-size: 35px;
       margin-bottom: 10px;
     }
@@ -169,9 +189,6 @@ const StyledLogin = styled.div`
     .forgot {
       font-size: 13px;
     }
-    .images {
-      display: none;
-    }
   }
 `;
 
@@ -179,7 +196,6 @@ const Login = () => {
   return (
     <StyledLogin>
       <div className="bg-login">
-        {/* <div className="content"> */}
         <div className="form-login">
           <img className="logo" src={logo} alt="Logo" />
           <p className="title-login">Log In</p>
@@ -218,8 +234,8 @@ const Login = () => {
             </div>
           </div>
         </div>
-        {/* </div> */}
       </div>
+      <img className="pic-bg" src={astronaut} alt="Astronaut" />
     </StyledLogin>
   );
 };
