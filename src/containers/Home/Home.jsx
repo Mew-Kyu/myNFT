@@ -46,10 +46,6 @@ const Home = () => {
           </StyledRight>
         </Cover>
       </PrimaryLayout>
-      {/* <Button percent={10} onClick={()=>console.log("Clickkkk")}><span>Click</span>Me</Button>
-      <Button textColor="white" bgColor="transparent" borderColor="white">0%</Button>
-      <Button width={77} height={32} textColor="white" bgColor="#5429FF">Following</Button>
-      <Button width={77} height={32} textColor="#5429FF" bgColor="rgba(84, 41, 255, 0.1)">Follow</Button> */}
     </>
   );
 };

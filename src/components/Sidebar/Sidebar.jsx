@@ -20,7 +20,7 @@ const StyledSideBar = styled.div`
   .logo {
     max-width: 100%;
   }
-  background-color: white;
+  background-color: #fff;
   height: 100vh;
   padding: 32px;
   .sidebar-menu {
@@ -42,6 +42,22 @@ const StyledSideBar = styled.div`
     font-weight: 500;
     line-height: 21px;
     margin-bottom: 24px;
+    transition: 0.3s;
+    svg {
+      path {
+        stroke: #7a797d;
+        transition: 0.3s;
+      }
+    }
+  }
+  a:hover {
+    svg {
+      path {
+        stroke: #5429ff;
+      }
+    }
+    color: #5429ff;
+    font-weight: 700;
   }
   .active {
     svg {
@@ -82,7 +98,7 @@ const Balance = styled.div`
   color: #fff;
   .eth {
     position: absolute;
-    padding-right: 6%;
+    padding-right: 30%;
   }
   .title-balance {
     font-weight: 500;
@@ -133,32 +149,32 @@ export const Sidebar = () => {
             <Dashboard />
             <span className="item-text">Dashboard</span>
           </NavLink>
-          <NavLink to="/x">
+          <NavLink to="/market">
             <Market />
             <span className="item-text">Market</span>
           </NavLink>
-          <NavLink to="/x">
+          <NavLink to="/active-bids">
             <Bid />
             <span className="item-text">Active Bids</span>
           </NavLink>
           <div className="sidebar-menu">PROFILE</div>
-          <NavLink to="/x">
+          <NavLink to="/portfolio">
             <Portfolio />
             <span className="item-text">My Portfolio</span>
           </NavLink>
-          <NavLink to="/x">
+          <NavLink to="/wallet">
             <Wallet />
             <span className="item-text">Wallet</span>
           </NavLink>
-          <NavLink to="/x">
+          <NavLink to="/favourite">
             <Favourite />
             <span className="item-text">Favourite</span>
           </NavLink>
-          <NavLink to="/x">
+          <NavLink to="/history">
             <History />
             <span className="item-text">History</span>
           </NavLink>
-          <NavLink to="/x">
+          <NavLink to="/setting">
             <Setting />
             <span className="item-text">Setting</span>
           </NavLink>
