@@ -1,11 +1,12 @@
 import { styled } from "styled-components";
+import { Form, Field } from "react-final-form";
+import { FORM_ERROR } from "final-form";
 import astronaut from "assets/login/astronaut.svg";
 import eye from "assets/login/clarity_eye.svg";
 import fb from "assets/login/Facebook.svg";
 import github from "assets/login/Github.svg";
 import google from "assets/login/Google.svg";
 import vector from "assets/login/Vector.svg";
-import { Link } from "react-router-dom";
 import logo from "assets/Logo.svg";
 
 const StyledLogin = styled.div`
@@ -163,6 +164,16 @@ const StyledLogin = styled.div`
   .reg:hover {
     opacity: 0.6;
   }
+  // Fail Login Noti
+  .error {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
   @media (max-width: 768px) {
     .pic-bg {
@@ -192,6 +203,19 @@ const StyledLogin = styled.div`
   }
 `;
 
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const onSubmit = async (values) => {
+  await sleep(300);
+  if (values.username !== "long") {
+    return { username: "Unknown username" };
+  }
+  if (values.password !== "123") {
+    return { [FORM_ERROR]: "Login Failed" };
+  }
+  window.alert("LOGIN SUCCESS!");
+};
+
 const Login = () => {
   return (
     <StyledLogin>
@@ -199,40 +223,93 @@ const Login = () => {
         <div className="form-login">
           <img className="logo" src={logo} alt="Logo" />
           <p className="title-login">Log In</p>
-          <p className="label-input">Username</p>
-          <input id="username" className="input-username" type="text" />
-          <div className="label-pass">
-            <p className="label-input">Password</p>
-            <p className="forgot">Forgot Password ?</p>
-          </div>
-          <div className="input-password">
-            <input id="password" className="pass" type="password" />
-            <img id="showpass" src={eye} alt="Show pass" />
-          </div>
-          <div style={{ textAlign: "center" }}>
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <button className="log-button">
-                <p>LOGIN IN</p>
-                <img src={vector} alt="Login button" />
-              </button>
-            </Link>
-            <p className="continue">or continue with</p>
-            <div className="logwith">
-              <button>
-                <img src={google} alt="Google" />
-              </button>
-              <button>
-                <img src={github} alt="Github" />
-              </button>
-              <button>
-                <img src={fb} alt="Facebook" />
-              </button>
-            </div>
-            <div className="reg-form">
-              <p className="reg-label">Don’t have an account yet?</p>
-              <p className="reg">Sign up for free</p>
-            </div>
-          </div>
+          <Form
+            onSubmit={onSubmit}
+            validate={(values) => {
+              const errors = {};
+              if (!values.username) {
+                errors.username = "Required";
+              }
+              if (!values.password) {
+                errors.password = "Required";
+              }
+              return errors;
+            }}
+            render={({ submitError, handleSubmit, submitting }) => (
+              <form onSubmit={handleSubmit}>
+                <Field name="username">
+                  {({ input, meta }) => (
+                    <>
+                      <p className="label-input">Username</p>
+                      <input
+                        input
+                        {...input}
+                        id="username"
+                        className="input-username"
+                        type="text"
+                      />
+                      {(meta.error || meta.submitError) && meta.touched && (
+                        <span style={{ color: "red", fontWeight: "bold" }}>
+                          {meta.error || meta.submitError}
+                        </span>
+                      )}
+                    </>
+                  )}
+                </Field>
+                <Field name="password">
+                  {({ input, meta }) => (
+                    <>
+                      <div className="label-pass">
+                        <p className="label-input">Password</p>
+                        <p className="forgot">Forgot Password ?</p>
+                      </div>
+                      <div className="input-password">
+                        <input
+                          {...input}
+                          id="password"
+                          className="pass"
+                          type="password"
+                        />
+                        <img id="showpass" src={eye} alt="Show pass" />
+                      </div>
+                      {meta.error && meta.touched && (
+                        <span style={{ color: "red", fontWeight: "bold" }}>
+                          {meta.error}
+                        </span>
+                      )}
+                    </>
+                  )}
+                </Field>
+                {submitError && <div className="error">{submitError}</div>}
+                <div className="buttons" style={{ textAlign: "center" }}>
+                  <button
+                    className="log-button"
+                    type="submit"
+                    disabled={submitting}
+                  >
+                    <p>LOGIN IN</p>
+                    <img src={vector} alt="Login button" />
+                  </button>
+                  <p className="continue">or continue with</p>
+                  <div className="logwith">
+                    <button>
+                      <img src={google} alt="Google" />
+                    </button>
+                    <button>
+                      <img src={github} alt="Github" />
+                    </button>
+                    <button>
+                      <img src={fb} alt="Facebook" />
+                    </button>
+                  </div>
+                  <div className="reg-form">
+                    <p className="reg-label">Don’t have an account yet?</p>
+                    <p className="reg">Sign up for free</p>
+                  </div>
+                </div>
+              </form>
+            )}
+          />
         </div>
       </div>
       <img className="pic-bg" src={astronaut} alt="Astronaut" />
